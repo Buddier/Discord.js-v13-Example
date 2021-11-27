@@ -1,0 +1,24 @@
+{
+  "name": "Discordjs-v13-Example",
+  "version": "1.0.0",
+  "description": "Discordjs v13 Example Bot by Expectatives#1157",
+  "main": "index.js",
+  "author": "Expectatives",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0",
+    "glob": "^7.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Expectatives/Discord.js-v13-Example.git"
+  },
+  "bugs": "https://github.com/Expectatives/Discord.js-v13-Example/issues",
+  "homepage": "https://github.com/Expectatives/Discord.js-v13-Example#readme"
+}
