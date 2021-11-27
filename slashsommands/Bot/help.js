@@ -20,8 +20,8 @@ module.exports = {
     // If you want to delete them, remove this part of
     // the code and in line: 62 delete ", components: [row]"
     const row = new client.discord.MessageActionRow()
-			.addComponents(
-			  new client.discord.MessageButton()
+	.addComponents(
+	new client.discord.MessageButton()
           .setLabel("GitHub")
           .setStyle("LINK")
           .setURL("https://github.com/Expectatives/Discord.js-v13-Example"),
@@ -29,7 +29,7 @@ module.exports = {
           .setLabel("Support")
           .setStyle("LINK")
           .setURL("https://dsc.gg/faithcommunity")
-		);
+    );
 
     const commandInt = interaction.options.getString("command");
     if (!commandInt) {
@@ -55,7 +55,7 @@ module.exports = {
         .setTitle(`${client.user.username} SlashHelp`)
         .setDescription(` Hello **<@${interaction.member.id}>**, I am <@${client.user.id}>.  \nYou can use \`/help <slash_command>\` to see more info about the SlashCommands!\n**Total Commands:** ${client.commands.size}\n**Total SlashCommands:** ${client.slashCommands.size}`)
         .addField("🤖 - Bot SlashCommands", botCommandsList.map((data) => `${data}`).join(", "), true)
-			  .addField("🛠 - Utility SlashCommands", utilityCommandsList.map((data) => `${data}`).join(", "), true)
+	.addField("🛠 - Utility SlashCommands", utilityCommandsList.map((data) => `${data}`).join(", "), true)
         .setColor(client.config.embedColor)
         .setFooter(client.config.embedfooterText, client.user.avatarURL());
       
