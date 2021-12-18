@@ -24,8 +24,8 @@ If you find an error or need support, go to my discord server and open a ticket 
 * Step 6: Click on the "Copy" button, this to copy the Bot Token:
 <img src="https://media.discordapp.net/attachments/831942716275163147/913968231851622441/unknown.png?width=1008&height=406" />
 
-* Step 7: Edit `.env-example` file and paste your bot token.
-* Step 8: Rename `.env-example` to `.env`.
+* Step 7: Edit `.env.example` file and paste your bot token.
+* Step 8: Rename `.env.example` to `.env`.
 * Step 9: Edit the `config.json` file to your liking.
 * Step 10: Install bot dependencies with `npm i`.
 * Step 11: Start the bot with `npm start`!
