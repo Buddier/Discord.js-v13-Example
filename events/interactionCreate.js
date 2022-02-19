@@ -4,8 +4,6 @@ const client = require("../index");
 
 client.on("interactionCreate", async (interaction) => {
   if (interaction.isCommand()) {
-    await interaction.deferReply({ ephemeral: false }).catch(() => {});
-
     const command = client.slashCommands.get(interaction.commandName);
     if (!command) return interaction.followUp({ content: 'an Erorr' });
 
