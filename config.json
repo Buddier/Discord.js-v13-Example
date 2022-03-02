@@ -2,6 +2,8 @@
   "botClientID": "YOUR_BOT_ID",
   "botPrefix": "!",
 
+  "ownerID": "598287962576519179",
+
   "embedColor": "#00dbff",
   "embedfooterText": "Discord.js v13 Example by Expectatives#1157"
 }
