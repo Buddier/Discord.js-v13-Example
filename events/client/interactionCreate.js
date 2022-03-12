@@ -5,7 +5,7 @@ module.exports = {
      * @param {CommandInteraction} interaction 
      * @param {Client} client 
      */
-    execute(interaction, client) {
+    async execute(interaction, client) {
         if (!interaction.isCommand()) return;
         
         const command = client.slash.get(interaction.commandName);
