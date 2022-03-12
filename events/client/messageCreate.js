@@ -5,7 +5,7 @@ module.exports = {
      * @param {Message} message 
      * @param {Client} client 
      */
-    execute(message, client) {
+    async execute(message, client) {
         if (message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(client.config.prefix)) return;
         
         const [cmd, ...args] = message.content.slice(client.config.botPrefix.length).trim().split(" ");
