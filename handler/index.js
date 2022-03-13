@@ -8,11 +8,11 @@ const loadEvents = async function (client) {
     const eventFolders = fs.readdirSync("./events");
     for (const folder of eventFolders) {
         const eventFiles = fs
-        .readdirSync(`./event/${folder}`)
+        .readdirSync(`./events/${folder}`)
         .filter((file) => file.endsWith(".js"));
         
         for (const file of eventFiles) {
-            const event = require(`../event/${folder}/${file}`);
+            const event = require(`../events/${folder}/${file}`);
             
             if (event.name) {
                 console.log(chalk.bgBlueBright.black(` ✔️ => Event ${file} is being loaded `));
