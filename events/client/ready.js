@@ -6,6 +6,7 @@ module.exports = {
      * @param {Client} client 
      */
     async execute(client) {
+        
         // Puts an activity
         client.user.setActivity("Expectatives#1157", {
             type: "WATCHING",

@@ -7,9 +7,7 @@ module.exports = {
      */
     async execute(message, client) {
         if (message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(client.config.botPrefix)) return;
-        
         const [cmd, ...args] = message.content.slice(client.config.botPrefix.length).trim().split(" ");
-        
         const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases?.includes(cmd.toLowerCase()));
         
         if (!command) return;

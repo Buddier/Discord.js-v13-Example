@@ -11,7 +11,6 @@ module.exports = {
      */
     async execute(member, client) {
         const { guild } = member;
-
         console.log(`${member.username} join guilds ${guild.name}`);
     }
 }
