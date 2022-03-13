@@ -3,7 +3,7 @@ This is an example bot to make commands with categories using discord.js v13, it
 If you find an error or need support, go to my discord server and open a ticket > [Discord Server Here](https://dsc.gg/faithcommunity)
 
 # Dependencies
-* Node v16
+* Node v17
 * npm
 
 # Steps on how to run this project
@@ -26,7 +26,7 @@ If you find an error or need support, go to my discord server and open a ticket 
 
 * Step 7: Edit `.env.example` file and paste your bot token.
 * Step 8: Rename `.env.example` to `.env`.
-* Step 9: Edit the `config.json` file to your liking.
+* Step 9: Edit the `config.js` file to your liking.
 * Step 10: Install bot dependencies with `npm i`.
 * Step 11: Start the bot with `npm start`!
 
