@@ -26,11 +26,11 @@ module.exports = {
                 new client.discord.MessageButton()
                     .setLabel("GitHub")
                     .setStyle("LINK")
-                    .setURL("https://github.com/Expectatives/Discord.js-v13-Example"),
+                    .setURL("http://github.com/Expectatives/Discord.js-v13-Example"),
                 new client.discord.MessageButton()
                     .setLabel("Support")
                     .setStyle("LINK")
-                    .setURL("https://dsc.gg/faithcommunity")
+                    .setURL("http://dsc.gg/faithcommunity")
             );
 
         const commandInt = interaction.options.getString("command");

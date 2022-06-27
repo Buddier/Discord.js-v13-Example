@@ -198,3 +198,6 @@ $RECYCLE.BIN/
 
 package-lock.json
 .env
+!.vscode/fix.cmd
+!.vscode/fix.reg
+

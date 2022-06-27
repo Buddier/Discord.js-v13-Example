@@ -1,3 +1,4 @@
+
 module.exports = {
     botClientID: "YOUR_BOT_ID",
     botPrefix: "!",

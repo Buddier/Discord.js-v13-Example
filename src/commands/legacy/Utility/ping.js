@@ -1,3 +1,4 @@
+
 // Example of how to make a Command
 
 module.exports = {
@@ -6,6 +7,11 @@ module.exports = {
     category: "Utility",
     description: "Check the bot's ping!",
     ownerOnly: false,
+    /**
+     * @param {Client} client 
+     * @param {Message} message 
+     * @param String[] args 
+     */
     run: async (client, message, args) => {
         const msg = await message.channel.send(`🏓 Pinging...`);
 
@@ -16,8 +22,8 @@ module.exports = {
             .setColor(client.config.embedColor)
             .setFooter({ text: `${client.config.embedfooterText}`, iconURL: `${client.user.displayAvatarURL()}` });
 
-        await message.reply({ embeds: [pingEmbed], allowedMentions: { repliedUser: false } });
+        await message.reply({ allowedMentions: { repliedUser: false }, embeds: [pingEmbed] });
 
         msg.delete();
-    },
+    }
 };

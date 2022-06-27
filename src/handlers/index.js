@@ -1,18 +1,19 @@
-const fs = require("fs");
+
+const fs    = require("fs");
 const chalk = require("chalk");
 
 /**
  * Load Events
  */
 const loadEvents = async function (client) {
-    const eventFolders = fs.readdirSync("./events");
+    const eventFolders = fs.readdirSync(`${client.cwd}/src/events`);
     for (const folder of eventFolders) {
         const eventFiles = fs
-        .readdirSync(`./events/${folder}`)
-        .filter((file) => file.endsWith(".js"));
+            .readdirSync(`${client.cwd}/src/events/${folder}`)
+            .filter((file) => file.endsWith(".js"));
         
         for (const file of eventFiles) {
-            const event = require(`../events/${folder}/${file}`);
+            const event = require(`${client.cwd}/src/events/${folder}/${file}`);
             
             if (event.name) {
                 console.log(chalk.bgBlueBright.black(` ✔️ => Event ${file} is being loaded `));
@@ -34,14 +35,14 @@ const loadEvents = async function (client) {
  * Load Prefix Commands
  */
 const loadCommands = async function (client) {
-    const commandFolders = fs.readdirSync("./commands");
+    const commandFolders = fs.readdirSync(`${client.cwd}/src/commands/legacy/`);
     for (const folder of commandFolders) {
         const commandFiles = fs
-        .readdirSync(`./commands/${folder}`)
-        .filter((file) => file.endsWith(".js"));
+            .readdirSync(`${client.cwd}/src/commands/legacy/${folder}`)
+            .filter((file) => file.endsWith(".js"));
         
         for (const file of commandFiles) {
-            const command = require(`../commands/${folder}/${file}`);
+            const command = require(`${client.cwd}/src/commands/legacy/${folder}/${file}`);
             
             if (command.name) {
                 client.commands.set(command.name, command);
@@ -52,7 +53,7 @@ const loadCommands = async function (client) {
             }
             
             if (command.aliases && Array.isArray(command))
-            command.aliases.forEach((alias) => client.aliases.set(alias, command.name));
+                command.aliases.forEach((alias) => client.aliases.set(alias, command.name));
         }
     }
 }
@@ -61,16 +62,16 @@ const loadCommands = async function (client) {
  * Load SlashCommands
  */
 const loadSlashCommands = async function (client) {
-    let slash = []
+    let slash = [];
 
-    const commandFolders = fs.readdirSync("./slashCommands");
+    const commandFolders = fs.readdirSync(`${client.cwd}/src/commands/slash`);
     for (const folder of commandFolders) {
         const commandFiles = fs
-        .readdirSync(`./slashCommands/${folder}`)
-        .filter((file) => file.endsWith(".js"));
+            .readdirSync(`${client.cwd}/src/commands/slash/${folder}`)
+            .filter((file) => file.endsWith(".js"));
         
         for (const file of commandFiles) {
-            const command = require(`../slashCommands/${folder}/${file}`);
+            const command = require(`${client.cwd}/src/commands/slash/${folder}/${file}`);
             
             if (command.name) {
                 client.slash.set(command.name, command);
@@ -89,7 +90,7 @@ const loadSlashCommands = async function (client) {
         //    .get("YOUR_GUILD_ID")
         //    .commands.set(slash);
 
-        // Register Slash Commands for all the guilds
+        console.log('Register Slash Commands for all the guilds.');
         await client.application.commands.set(slash)
     })
 }
