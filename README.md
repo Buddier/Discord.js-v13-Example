@@ -137,8 +137,3 @@ If you find an error or need support, go to my discord server and open a ticket:
 <!--  1. [ToDo list](./.github/TODO.md) -->
 
 ---
-
-<p align="center">
-  <img src="http://2ip.io/bar/ip3.gif"/>
-</p>
-
