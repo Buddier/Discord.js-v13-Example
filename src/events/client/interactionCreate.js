@@ -1,3 +1,4 @@
+
 module.exports = {
     name: 'interactionCreate',
 
@@ -13,7 +14,7 @@ module.exports = {
         
         if (command.ownerOnly) {
             if (interaction.user.id !== client.config.ownerID) {
-                return interaction.reply({ content: "This command only for Bot Owner!", ephemeral: true });
+                return interaction.reply({ ephemeral: true, content: "This command only for Bot Owner!" });
             }
         }
         
@@ -29,7 +30,7 @@ module.exports = {
         }
         
         try {
-            command.run(client, interaction, args)
+            command.run(client, interaction, args);
         } catch (e) {
             interaction.reply({ content: e.message });
         }

@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+
+[HKEY_CLASSES_ROOT\SOFTWARE\Classes\.env]
+@="env_auto_file"
+"Content Type"="text/plain"
+"PerceivedType"="text"
+
+
+[HKEY_CLASSES_ROOT\SOFTWARE\Classes\.env\OpenWithProgids]
+"VSCode.txt"=""
+

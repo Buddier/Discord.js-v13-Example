@@ -1,0 +1,17 @@
+
+* text=auto
+
+## Enforce text mode and CRLF line breaks
+*.editorconfig  text eol=crlf
+*.gitattributes text eol=crlf
+*.gitignore     text eol=crlf
+*.htm           text eol=crlf
+*.html          text eol=crlf
+*.json          text eol=crlf
+*.log           text eol=crlf
+*.md            text eol=crlf
+*.txt           text eol=crlf
+*.yaml          text eol=crlf
+*.yml           text eol=crlf
+CODEOWNERS      text eol=crlf
+LICENSE         text eol=crlf

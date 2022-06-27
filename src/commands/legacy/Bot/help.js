@@ -1,3 +1,4 @@
+
 const { readdirSync } = require("fs");
 
 // Example of how to make a Help Command
@@ -9,38 +10,43 @@ module.exports = {
     category: "Bot",
     description: "Return all commands, or one specific command!",
     ownerOnly: false,
+
+    /**
+     * @param {Client} client 
+     * @param {Message} message 
+     * @param String[] args 
+     */
     run: async (client, message, args) => {
 
         // Buttons that take you to a link
         // If you want to delete them, remove this part of
         // the code and in line: 55 delete ", components: [row]"
-        const row = new client.discord.MessageActionRow()
-            .addComponents(
-                new client.discord.MessageButton()
-                    .setLabel("GitHub")
-                    .setStyle("LINK")
-                    .setURL("https://github.com/Expectatives/Discord.js-v13-Example"),
-                new client.discord.MessageButton()
-                    .setLabel("Support")
-                    .setStyle("LINK")
-                    .setURL("https://dsc.gg/faithcommunity")
-            );
+        const row = new client.discord.MessageActionRow().addComponents(
+            new client.discord.MessageButton()
+                .setLabel("GitHub")
+                .setStyle("LINK")
+                .setURL("http://github.com/Expectatives/Discord.js-v13-Example"),
+            new client.discord.MessageButton()
+                .setLabel("Support")
+                .setStyle("LINK")
+                .setURL("http://dsc.gg/faithcommunity"),
+        );
 
         if (!args[0]) {
 
             // Get the commands of a Bot category
             const botCommandsList = [];
-            readdirSync(`./commands/Bot`).forEach((file) => {
-                const filen = require(`../../commands/Bot/${file}`);
-                const name = `\`${filen.name}\``
+            readdirSync(`${client.cwd}/src/commands/legacy/Bot`).forEach((file) => {
+                const filen = require(`${client.cwd}/src/commands/legacy/Bot/${file}`);
+                const name = `\`${filen.name}\``;
                 botCommandsList.push(name);
             });
 
             // Get the commands of a Utility category
             const utilityCommandsList = [];
-            readdirSync(`./commands/Utility`).forEach((file) => {
-                const filen = require(`../../commands/Utility/${file}`);
-                const name = `\`${filen.name}\``
+            readdirSync(`${client.cwd}/src/commands/legacy/Utility`).forEach((file) => {
+                const filen = require(`${client.cwd}/src/commands/legacy/Utility/${file}`);
+                const name = `\`${filen.name}\``;
                 utilityCommandsList.push(name);
             });
 
@@ -53,7 +59,7 @@ module.exports = {
                 .setColor(client.config.embedColor)
                 .setFooter({ text: `${client.config.embedfooterText}`, iconURL: `${client.user.displayAvatarURL()}` });
 
-            message.reply({ embeds: [helpEmbed], allowedMentions: { repliedUser: false }, components: [row] });
+            message.reply({ allowedMentions: { repliedUser: false }, embeds: [helpEmbed], components: [row] });
         } else {
             const command = client.commands.get(args[0].toLowerCase()) || client.commands.find((c) => c.aliases && c.aliases.includes(args[0].toLowerCase()));
 
@@ -80,7 +86,7 @@ module.exports = {
                     .setColor(client.config.embedColor)
                     .setFooter({ text: `${client.config.embedfooterText}`, iconURL: `${client.user.displayAvatarURL()}` });
 
-                message.reply({ embeds: [helpCmdEmbed], allowedMentions: { repliedUser: false } });
+                message.reply({ allowedMentions: { repliedUser: false }, embeds: [helpCmdEmbed] });
             }
         }
     },
