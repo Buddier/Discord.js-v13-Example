@@ -36,19 +36,19 @@ module.exports = {
         const commandInt = interaction.options.getString("command");
         if (!commandInt) {
 
-            // Get the slash commands of a Bot category
+            // Get the commands of a Bot category
             const botCommandsList = [];
-            readdirSync(`./slashCommands/Bot`).forEach((file) => {
-                const filen = require(`../../slashCommands/Bot/${file}`);
-                const name = `\`${filen.name}\``
+            readdirSync(`${client.cwd}/src/commands/slash/Bot`).forEach((file) => {
+                const filen = require(`${client.cwd}/src/commands/slash/Bot/${file}`);
+                const name = `\`${filen.name}\``;
                 botCommandsList.push(name);
             });
 
-            // Get the slash commands of a Utility category
+            // Get the commands of a Utility category
             const utilityCommandsList = [];
-            readdirSync(`./slashCommands/Utility`).forEach((file) => {
-                const filen = require(`../../slashCommands/Utility/${file}`);
-                const name = `\`${filen.name}\``
+            readdirSync(`${client.cwd}/src/commands/slash/Utility`).forEach((file) => {
+                const filen = require(`${client.cwd}/src/commands/slash/Utility/${file}`);
+                const name = `\`${filen.name}\``;
                 utilityCommandsList.push(name);
             });
 
